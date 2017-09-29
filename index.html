@@ -22,7 +22,7 @@
             <hr class="my-4">
             <p>Corbin Dallas Certified as Supper Green!</p>
             <p class="lead">
-                <button class="btn btn-primary btn-lg" id="button-reservations">Check Reservations</button>
+                <a class="btn btn-primary btn-lg" href="tables" role="button">Check Reservations</a>
             </p>
         </div>
         <form class="border border-secondary p-4">
@@ -49,12 +49,6 @@
 </body>
 
 <script type="text/javascript">
-
-    $('#button-reservations').on("click", function () {
-        $.get('/tables',function () {
-            console.log("Going to Tables?");
-        })
-    });
 
 </script>
 
