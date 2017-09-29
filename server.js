@@ -45,7 +45,13 @@ app.post("/api/new", function(req, res) {
     res.json(newReservation);
   });
 
+app.get("/api/list", function(req, res){
 
+    console.log(reservations);
+    return res.json(reservations);
+   
+
+});
 
 
 
