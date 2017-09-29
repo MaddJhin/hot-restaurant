@@ -11,7 +11,7 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var reserved = [];
+var reservations = [];
 
 var waiting = [];
 
@@ -31,20 +31,20 @@ app.get("/tables", function(req, res){
 
 
 //using express post method to display the data saved in the arrays reserved and waiting
-/*
-app.post("/api/new", function(req, res) {
+
+app.post("/api/list", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
-    var newcharacter = req.body;
-    newcharacter.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
+    var newReservation = req.body;
+    newReservation = newReservation.replace(/\s+/g, "").toLowerCase();
   
-    console.log(newcharacter);
+    console.log(newReservation);
   
-    characters.push(newcharacter);
+    resverations.push(newReservations);
   
-    res.json(newcharacter);
+    res.json(newReservations);
   });
-*/
+
 
 
 app.listen(PORT,function(){
