@@ -40,9 +40,9 @@ app.post("/api/list", function(req, res) {
   
     console.log(newReservation);
   
-    resverations.push(newReservation);
+    reservations.push(newReservation);
   
-    res.json(newReservations);
+    res.json(newReservation);
   });
 
 
