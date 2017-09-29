@@ -11,7 +11,14 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var reservations = [];
+var reservations = [
+    {
+        "name": "test",
+        "email": "test@test.com",
+        "phone": 4025555555,
+        "id": 113
+    }
+];
 
 var waiting = [];
 
