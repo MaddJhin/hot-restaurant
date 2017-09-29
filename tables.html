@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Libraries -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css' />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
     <title>Current Reservations</title>
@@ -25,21 +25,41 @@
                 <a class="btn btn-primary btn-lg" href="/" role="button">Make a Reservation</a>
             </p>
         </div>
-        <div id="reservations">
-            
+        <div>
+            <h4>Reservations</h4>
+            <div id="reservations">
+
+            </div>
         </div>
-        <div id="waitList">
+        <div>
+            <h4>Wait List</h4>
+            <div id="waitList">
             
+            </div>
         </div>
     </div>
 </body>
 
 <script>
-
-    $.get('/api/list', function(data){
+    $.get('/api/list', function (data) {
         console.log(data);
         if (data) {
+            for (var i = 0; i < data.length; i++) {
+                var reservation = data[i];
+                var person = $('<div>');
+                person.html(reservation.name).appendTo('#reservations');
+            }
+        }
+    });
 
+    $.get('/api/wait', function (data) {
+        console.log(data);
+        if (data) {
+            for (var i = 0; i < data.length; i++) {
+                var reservation = data[i];
+                var person = $('<div>');
+                person.html(reservation.name).appendTo('#waitList');
+            }
         }
     });
 
