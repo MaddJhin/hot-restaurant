@@ -57,12 +57,12 @@ app.post("/api/new", function(req, res) {
     if(reservations.length < 2){
         reservations.push(newReservation);
         
-        res.json(newReservation);
+        
 
     }else{
     
         waiting.push(newReservation);
-        res.json(newReservation);
+        
     }
 
   });
