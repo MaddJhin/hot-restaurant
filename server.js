@@ -32,7 +32,7 @@ app.get("/tables", function(req, res){
 
 //using express post method to display the data saved in the arrays reserved and waiting
 
-app.post("/api/list", function(req, res) {
+app.post("/api/new", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
     var newReservation = req.body;
@@ -44,6 +44,8 @@ app.post("/api/list", function(req, res) {
   
     res.json(newReservation);
   });
+
+
 
 
 
