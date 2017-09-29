@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
               <label for="innputEmail">Email Address</label>
-              <input type="email" class="form-control" id="innputEmail" placeholder="Enter email">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
             </div>
             <div class="form-group">
               <label for="inputPhone">Phone Number</label>
@@ -49,6 +49,22 @@
 </body>
 
 <script type="text/javascript">
+
+    $('#inputSubmit').on("click", function (e) {
+        e.preventDefault();
+        var newReservation = {
+            name: $("#inputName").val().trim(),
+            email: $("#inputEmail").val().trim(),
+            phone: $("#inputPhone").val().trim(),
+            id: $("#inputID").val().trim()
+        };
+
+        $.post('/api/list', newReservation)
+        .done(function (data) {
+            console.log(data);
+            alert("Adding Reservation")
+        }); 
+    });
 
 </script>
 
