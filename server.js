@@ -13,6 +13,13 @@ var reserved = [];
 
 var waiting = [];
 
+app.get("/", function(){
+
+    res.sendFile(path.join(__dirname, "index.html"));
+
+});
+
+
 
 
 
