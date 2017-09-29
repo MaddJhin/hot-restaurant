@@ -13,7 +13,7 @@ var reserved = [];
 
 var waiting = [];
 
-app.get("/", function(){
+app.get("/", function(req, res){
 
     res.sendFile(path.join(__dirname, "index.html"));
 
