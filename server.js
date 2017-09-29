@@ -13,14 +13,23 @@ app.use(bodyParser.json());
 
 var reservations = [
     {
-        "name": "test",
-        "email": "test@test.com",
-        "phone": 4025555555,
-        "id": 113
+        name: "test",
+        email: "test@test.com",
+        phone: 4025555555,
+        id: 113
     }
 ];
 
-var waiting = [];
+var waiting = 
+    [
+        {
+            "name": "Test2",
+            "email": "test2@test.com",
+            "phone": 4026666666,
+            "id": 311
+        }
+    
+];
 
 app.get("/", function(req, res){
 
@@ -54,11 +63,17 @@ app.post("/api/new", function(req, res) {
 
 app.get("/api/list", function(req, res){
 
-    console.log(reservations);
-    return res.json(reservations);
-   
-
+        
+        console.log(reservations);
+        return res.json(reservations);
 });
+
+app.get("/api/wait", function(req, res){
+    
+            
+            console.log(waiting);
+            return res.json(waiting);
+    });
 
 
 
